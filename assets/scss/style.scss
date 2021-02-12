@@ -5,32 +5,38 @@
 
 1.    Import files
 2.    Header
-3.   
-4.   
-5    
-6.   
-7.   
-8.   
-9.    
-10.    
+3.    quiz-game-wrapper
+4.          
 ******************************/
 
 //Import files
-@import 'base';
-@import 'variable';
-@import 'mixin';
+@import "base";
+@import "variable";
+@import "mixin";
 
+/*===========================
+// quiz-game-wrapper
+============================*/
 
+.quiz-game-wrapper {
+   @include flex-position(flex, center, center);
+   min-height: 100vh;
+}
 
-/*==========================
-// start  header 
-===========================*/
+/*quiz-card*/
+.quiz-card {
+   background-color: #f4f4f4;
+   padding: 40px;
+   &__title {
+      color: $primary-color;
+      margin: 0 0 15px;
+   }
+}
 
-/*==========================
-// start   
-===========================*/
-
-
-
-
-
+/*question-list*/
+.question-list {
+   &__item {
+      margin-bottom: 8px;
+      color: tomato;
+   }
+}
