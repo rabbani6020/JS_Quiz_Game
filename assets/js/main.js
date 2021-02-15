@@ -1,26 +1,32 @@
+// Question Paste here
+let questionWrap = document.querySelector(".question-wrap");
+
+let questionCount = 0;
+
+// All Question Here
 const allQuestions = [
    {
-      question: `Q1: Inside which HTML element do we put the JavaScript?`,
+      question: `Inside which HTML element do we put the JavaScript?`,
       options: {
-         a: `<script>`,
-         b: `<head>`,
-         c: `<meta>`,
-         d: `<style>`,
+         a: "script",
+         b: "head",
+         c: "meta",
+         d: "style",
       },
       corrAns: `a`,
    },
    {
-      question: `Q2 :- What is the correct syntax for referring to an external script called "LFC.js"?`,
+      question: `What is the correct syntax for referring to an external script called "LFC.js"?`,
       options: {
-         a: `<script src="LFC.js">`,
-         b: `<script source="LFC.js">`,
-         c: `<script ref="LFC.js">`,
-         d: `<script type="LFC.js">`,
+         a: 'script src="LFC.js"',
+         b: 'script source="LFC.js"',
+         c: 'script ref="LFC.js"',
+         d: 'script type="LFC.js"',
       },
       corrAns: `a`,
    },
    {
-      question: `Q3 :- What is the original name of JavaScript?`,
+      question: `What is the original name of JavaScript?`,
       options: {
          a: `LiveScript`,
          b: `EScript`,
@@ -30,7 +36,7 @@ const allQuestions = [
       corrAns: `c`,
    },
    {
-      question: `Q4 :- Which of them is not the looping structures in JavaScript?`,
+      question: `Which of them is not the looping structures in JavaScript?`,
       options: {
          a: `for`,
          b: `while`,
@@ -40,7 +46,7 @@ const allQuestions = [
       corrAns: `c`,
    },
    {
-      question: `Q5 :- The "function" and " var" are known as:`,
+      question: `The "function" and " var" are known as:`,
       options: {
          a: `Keywords`,
          b: `Data types`,
@@ -50,7 +56,7 @@ const allQuestions = [
       corrAns: `c`,
    },
    {
-      question: `Q6 :- Which one of the following is the correct way for calling the JavaScript code?`,
+      question: `Which one of the following is the correct way for calling the JavaScript code?`,
       options: {
          a: `Preprocessor`,
          b: `Triggering Event`,
@@ -60,7 +66,7 @@ const allQuestions = [
       corrAns: `d`,
    },
    {
-      question: `Q7 :- Which one of the following is an ternary operator:`,
+      question: `Which one of the following is an ternary operator:`,
       options: {
          a: `?`,
          b: `: `,
@@ -70,10 +76,10 @@ const allQuestions = [
       corrAns: `a`,
    },
    {
-      question: `Q8 :- Which one of the following is an nullish coalescing operator:`,
+      question: `Which one of the following is an nullish coalescing operator:`,
       options: {
-         a: `*`,
-         b: `? `,
+         a: `?`,
+         b: `: `,
          c: `-`,
          d: `??`,
       },
@@ -81,40 +87,50 @@ const allQuestions = [
    },
 ];
 
-let questionTitle = document.querySelector(".question__title");
-let option1 = document.querySelector("#option1");
-let option2 = document.querySelector("#option2");
-let option3 = document.querySelector("#option3");
-let option4 = document.querySelector("#option4");
-
-let questionWrap = document.querySelector("#question-wrap");
-
-// allQuestions.map((item, index) => {
-//    questionTitle.innerText = item.question;
-//    option1.innerText = item.options.a;
-//    option2.innerText = item.options.b;
-//    option3.innerText = item.options.c;
-//    option4.innerText = item.options.d;
-// });
-
-let questionCount = 0;
-
+// setQuestin function here for showing question
 const setQuestion = () => {
-   const questionList = allQuestions[questionCount];
-   questionTitle.innerText = questionList.question;
-   option1.innerText = questionList.options.a;
-   option2.innerText = questionList.options.b;
-   option3.innerText = questionList.options.c;
-   option4.innerText = questionList.options.d;
+
+   // Questin arraylist
+   let questionList = [];
+
+   // question array element itterate here
+   allQuestions.map((items, indx) => {
+
+      // answerlist / options here
+      let answerList = [];
+
+      // question options taking 
+      for (let ind in items.options) {
+         answerList.push(
+            `
+            <div class="form-group">
+               <input type="radio" name="questionno${indx}" id="${ind}${indx}" >
+               <label for="${ind}${indx}">${items.options[ind]}</label>
+            </div>
+
+            `
+         );
+      }
+
+      questionList.push(
+         `
+         <div class="question">
+            <h4 class="question__title mb-3">
+               ${questionCount++}   
+               ${items.question}   
+            </h4>
+
+            <div class="mb-3">
+            ${answerList.join("")}
+            </div>
+
+         </div>
+
+         `
+      );
+      questionWrap.innerHTML = questionList.join("");
+   });
 };
 
+// showing question call here
 setQuestion();
-
-// for(; questionCount <= allQuestions.length; questionCount++){
-//    const questionList = allQuestions[questionCount];
-//    questionTitle.innerText = questionList.question;
-//    option1.innerText = questionList.options.a;
-//    option2.innerText = questionList.options.b;
-//    option3.innerText = questionList.options.c;
-//    option4.innerText = questionList.options.d;
-// }
