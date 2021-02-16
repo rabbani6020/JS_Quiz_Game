@@ -116,7 +116,7 @@ const setQuestion = () => {
          `
          <div class="question">
             <h4 class="question__title mb-3">
-               ${questionCount++}   
+               ${questionCount++} :   
                ${items.question}   
             </h4>
 
