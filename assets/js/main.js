@@ -120,7 +120,7 @@ const setQuestion = () => {
                ${items.question}   
             </h4>
 
-            <div class="mb-3">
+            <div  class="answers mb-3">
             ${answerList.join("")}
             </div>
 
@@ -134,3 +134,22 @@ const setQuestion = () => {
 
 // showing question call here
 setQuestion();
+
+
+// create show results fuctions
+const showResults = () => {
+
+   let answerContainers = document.querySelectorAll('.answers');
+
+   let correctNum = 0;
+
+   allQuestions.map((items, indx) => {
+      let answerContainer = answerContainers[indx];
+      let selector = `input [name="questionno${indx}]:checked`;
+      let userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      console.log(answerContainer);
+   })
+
+}
+
+showResults();
