@@ -147,7 +147,7 @@ const showResults = () => {
       let answerContainer = answerContainers[indx];
       let selector = `input [name="questionno${indx}]:checked`;
       let userAnswer = (answerContainer.querySelector(selector) || {}).value;
-      console.log(answerContainer);
+      console.log(userAnswer);
    })
 
 }
