@@ -1,20 +1,3 @@
-/****************************
-==============================
-   table of content 
-==============================
-
-1.    Import files
-2.    Header
-3.    quiz-game-wrapper
-4.          
-******************************/
-/* Table of Content
-====================
-
-1. typography
-2. Global styles
-
-====================*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap");
 /* ===========================
 // Typography
@@ -86,7 +69,8 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-ul, li {
+ul,
+li {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -111,10 +95,9 @@ a:hover {
   color: #EB6A52;
 }
 
-input,
-textarea,
-select,
-:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: 0;
   box-shadow: 0;
 }
@@ -124,7 +107,8 @@ select,
   margin-top: -5px !important;
   margin-bottom: -5px !important;
 }
-.gutter-10 > li, .gutter-10 > div {
+.gutter-10 > li,
+.gutter-10 > div {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
 }
@@ -133,7 +117,8 @@ select,
   margin-top: -10px !important;
   margin-bottom: -10px !important;
 }
-.gutter-20 > li, .gutter-20 > div {
+.gutter-20 > li,
+.gutter-20 > div {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
@@ -142,7 +127,8 @@ select,
   margin-top: -15px !important;
   margin-bottom: -15px !important;
 }
-.gutter-30 > li, .gutter-30 > div {
+.gutter-30 > li,
+.gutter-30 > div {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
 }
@@ -151,7 +137,8 @@ select,
   margin-top: -20px !important;
   margin-bottom: -20px !important;
 }
-.gutter-40 > li, .gutter-40 > div {
+.gutter-40 > li,
+.gutter-40 > div {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
@@ -160,7 +147,8 @@ select,
   margin-top: -25px !important;
   margin-bottom: -25px !important;
 }
-.gutter-50 > li, .gutter-50 > div {
+.gutter-50 > li,
+.gutter-50 > div {
   padding-top: 25px !important;
   padding-bottom: 25px !important;
 }
@@ -169,7 +157,8 @@ select,
   margin-top: -30px !important;
   margin-bottom: -30px !important;
 }
-.gutter-60 > li, .gutter-60 > div {
+.gutter-60 > li,
+.gutter-60 > div {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
@@ -178,7 +167,8 @@ select,
   margin-top: -35px !important;
   margin-bottom: -35px !important;
 }
-.gutter-70 > li, .gutter-70 > div {
+.gutter-70 > li,
+.gutter-70 > div {
   padding-top: 35px !important;
   padding-bottom: 35px !important;
 }

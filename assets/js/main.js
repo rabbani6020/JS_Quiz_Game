@@ -1,7 +1,7 @@
 // Question Paste here
 let questionWrap = document.querySelector(".question-wrap");
 
-let questionCount = 0;
+let questionCount = 1;
 
 // All Question Here
 const allQuestions = [
@@ -89,24 +89,24 @@ const allQuestions = [
 
 // setQuestin function here for showing question
 const setQuestion = () => {
-
    // Questin arraylist
    let questionList = [];
 
    // question array element itterate here
    allQuestions.map((items, indx) => {
-
       // answerlist / options here
       let answerList = [];
 
-      // question options taking 
+      // question options taking
       for (let ind in items.options) {
          answerList.push(
             `
-            <div class="form-group">
-               <input type="radio" name="questionno${indx}" id="${ind}${indx}" >
-               <label for="${ind}${indx}">${items.options[ind]}</label>
-            </div>
+            <li class="question-list__item">
+               <div class="form-group">
+                  <input  type="radio" name="questionno${indx}" value="${ind}${indx}" id="${ind}${indx}" checked>
+                  <label for="${ind} ${indx}">${items.options[ind]}</label>
+               </div>
+            </li>
 
             `
          );
@@ -121,7 +121,9 @@ const setQuestion = () => {
             </h4>
 
             <div  class="answers mb-3">
-            ${answerList.join("")}
+               <ul class="question-list">
+                  ${answerList.join("")}
+               </ul>
             </div>
 
          </div>
@@ -135,11 +137,9 @@ const setQuestion = () => {
 // showing question call here
 setQuestion();
 
-
 // create show results fuctions
 const showResults = () => {
-
-   let answerContainers = document.querySelectorAll('.answers');
+   let answerContainers = document.querySelectorAll(".answers");
 
    let correctNum = 0;
 
@@ -148,8 +148,7 @@ const showResults = () => {
       let selector = `input [name="questionno${indx}]:checked`;
       let userAnswer = (answerContainer.querySelector(selector) || {}).value;
       console.log(userAnswer);
-   })
-
-}
+   });
+};
 
 showResults();
