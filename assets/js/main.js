@@ -103,10 +103,12 @@ const setQuestion = () => {
       for (let ind in items.options) {
          answerList.push(
             `
-            <div class="form-group">
-               <input type="radio" name="questionno${indx}" id="${ind}${indx}" >
-               <label for="${ind}${indx}">${items.options[ind]}</label>
-            </div>
+            <li class="question-list__item">
+               <div class="form-group">
+                  <input type="radio" name="questionno${indx}" id="${ind}${indx}" >
+                  <label for="${ind}${indx}">${items.options[ind]}</label>
+               </div>
+            </li>
 
             `
          );
@@ -121,7 +123,9 @@ const setQuestion = () => {
             </h4>
 
             <div  class="answers mb-3">
-            ${answerList.join("")}
+               <ul class="question-list">
+                  ${answerList.join("")}
+               </ul>
             </div>
 
          </div>
