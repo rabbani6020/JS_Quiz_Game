@@ -1,7 +1,7 @@
 // Question Paste here
 let questionWrap = document.querySelector(".question-wrap");
 
-let questionCount = 0;
+let questionCount = 1;
 
 // All Question Here
 const allQuestions = [
@@ -105,8 +105,8 @@ const setQuestion = () => {
             `
             <li class="question-list__item">
                <div class="form-group">
-                  <input type="radio" name="questionno${indx}" id="${ind}${indx}" >
-                  <label for="${ind}${indx}">${items.options[ind]}</label>
+                  <input class"me-3" type="radio" name="questionno${indx}" id="${ind}${indx}" >
+                  <label for="${ind} ${indx}">${items.options[ind]}</label>
                </div>
             </li>
 
